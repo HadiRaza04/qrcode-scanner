@@ -1,8 +1,31 @@
-# React + Vite
+# QR Code Scanner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## npm
+```javascript
+npm i html5-qrcode
+```
 
-Currently, two official plugins are available:
+## import and use
+```javascript
+import { Html5QrcodeScanner } from 'html5-qrcode';
+import { useEffect, useState } from 'react';
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+const [scanResult, setScanResult] = useState(null);
+useEffect(() => {
+    const scanner = new Html5QrcodeScanner('reader', {
+      qrbox: {
+        width: 250,
+        height: 250,
+      },
+      fps: 5,
+    });
+    scanner.render(success, error);
+    function success(result) {
+      scanner.clear();
+      setScanResult(result);
+    }
+    function error(err) {
+      console.warn(err);
+    }
+  }, []);
+```
