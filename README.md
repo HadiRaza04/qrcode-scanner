@@ -1,4 +1,4 @@
-# QR Code Scanner
+# <a href="https://qrcodescanner04.netlify.app/">QR Code Scanner</a>
 
 ## npm
 ```javascript
