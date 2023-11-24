@@ -24,6 +24,7 @@ function App() {
   return (
     <>
       <h1>QR Code Scanner</h1>
+      <a href='https://hadiraza04.github.io/qr-code-generator/' target="_blank">Generate QR Code</a>
       {scanResult ? (
         <div>
           Success:{' '}
@@ -34,6 +35,7 @@ function App() {
       ) : (
         <div id="reader"></div>
       )}
+      
     </>
   );
 }
